@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: azure;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 0 20px;
+}
+
+.botones {
+    padding: 12px 25px;
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.botones a {
+    background-color: #0a2be9;
+    padding: 12px 25px;
+    border-radius: 80px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.botones a:hover {
+    background-color: rgb(50, 194, 194);
+    transform: scale(1.05);
+}
+
+.greetings {
+    font-size: 7rem;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.greetings > span {
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: #fff;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+    10%, 90% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+.greetings > span:nth-child(2) { animation-delay: .2s; }
+.greetings > span:nth-child(3) { animation-delay: .4s; }
+.greetings > span:nth-child(4) { animation-delay: .6s; }
+.greetings > span:nth-child(5) { animation-delay: .8s; }
+.greetings > span:nth-child(6) { animation-delay: 1s; }
+
+.description {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.button a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width: 574px) {
+    .greetings {
+        font-size: 4rem;
+        font-weight: 800;
+    }
+    .description {
+        font-size: 2rem;
+    }
+    .button a {
+        font-size: 1rem;
+    }
+}
+
+.contenedor-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.imagen-carta {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.imagen-carta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+    display: block;
+}
+
+.imagen-carta:hover img {
+    opacity: 0.2;
+}
+
+.mensaje {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    padding: 20px;
+    transition: opacity 0.4s ease;
+    font-style: italic;
+    border-radius: 15px;
+}
+
+.imagen-carta:hover .mensaje {
+    opacity: 1;
+}
+
+.animacion-central {
+    text-align: center;
+}
